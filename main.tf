@@ -45,7 +45,7 @@ resource "azurerm_subnet" "subnet" {
   name                 = "subnet-${var.class_name}-${var.student_name}-${var.environment}-${var.location}-${random_integer.deployment_id_suffix.result}"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_vnet.subnet.name
-  address_prefixes     = [10.0.2.0/24]
+  address_prefixes     = ["10.0.2.0/24"]
   service_endpoints    = ["Microsoft.Sql"]
 
   tags = local.tags
